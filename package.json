@@ -1,0 +1,27 @@
+{
+  "name": "react-native-wxui",
+  "version": "0.1.0",
+  "description": "A UI package for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "react",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "animation"
+  ],
+  "author": "cnwxsoft",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.17.1",
+    "react-native-animatable": "^1.1.0",
+    "react-native-root-siblings": "^1.1.2"
+  }
+}
