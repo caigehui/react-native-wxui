@@ -72,7 +72,7 @@ export default class extends Component {
         { label: 'Loading', onPress: this._showLoading },
         { label: 'Success', onPress: this._showSuccess },
         { label: 'Fail', onPress: this._showFail },
-        { label: 'TimerPickerBox', onPress: this._showTimePickerBox }
+        { label: 'TimePickerBox', onPress: this._showTimePickerBox }
     ]
 
     commonComponents = [

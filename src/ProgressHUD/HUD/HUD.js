@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         right: 0,
         top: 0,
         bottom: 0,
-        backgroundColor: 'rgba(0,0,0,0.5)'
     },
     adjustNavigation: {
         top: Platform.OS === 'ios' ? 64 : 54
@@ -37,9 +36,16 @@ const styles = StyleSheet.create({
     touchable: {
         position: 'absolute',
         left: 0,
-        top: 0,
+        top: Platform.OS === 'ios' ? 104 : 84,
         right: 0,
         bottom: 0,
+    },
+    touchableTop: {
+        position: 'absolute',
+        left: 0,
+        bottom: Platform.OS === 'ios' ? 104 : 84,
+        right: 0,
+        top: 0,
     },
     container: {
         position: 'absolute',
@@ -112,7 +118,7 @@ class HUD extends Component {
     }
 
     render() {
-    
+
         const { maskAnimationType, componentAnimationType, maskDuration, componentDuration } = this.state;
         const { width, height, component, onHide, maskOpacity, adjustNavigation, enableCancel, options, position, menu, condition, top } = this.props;
 
@@ -126,15 +132,18 @@ class HUD extends Component {
         } else if (menu) {
             componentViewStyle = [styles.container, { right: 5, top: Platform.OS === 'ios' ? 69 : 59, width: width, height: height }, adjustNavigation && styles.componentAdjustNavigation];
         } else if (condition) {
-            componentViewStyle = [styles.container, { left: 0, top: 0, width: width, height: height }, adjustNavigation && styles.componentAdjustNavigation];
+            componentViewStyle = [styles.container, { left: 0, top: 0, width: width, height: height }, adjustNavigation && styles.componentAdjustNavigation, condition ? styles.adjustFilter : null];
         } else if (top) {
             componentViewStyle = [styles.container, { left: (WIDTH - width) / 2, top, width: width, height: height }, adjustNavigation && styles.componentAdjustNavigation];
         }
 
         return (
-            <Animatable.View animation={maskAnimationType} easing="linear" duration={maskDuration} onAnimationEnd={this.onFadeOut} style={[styles.maskView, { backgroundColor: 'rgba(0,0,0,' + maskOpacity + ')' }, adjustNavigation && styles.adjustNavigation, condition ? styles.adjustFilter : null]}>
-                <TouchableWithoutFeedback  onPress={() => enableCancel ? onHide(this) : {} }>
-                    <View style={styles.touchable}></View>
+            <Animatable.View animation={maskAnimationType} easing="linear" duration={maskDuration} onAnimationEnd={this.onFadeOut} style={[styles.maskView, adjustNavigation && styles.adjustNavigation,]}>
+                <TouchableWithoutFeedback onPress={() => enableCancel ? onHide(this) : {}}>
+                    <View style={[styles.touchable, { backgroundColor: 'rgba(0,0,0,' + maskOpacity + ')' }]}></View>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={() => enableCancel ? onHide(this) : {}}>
+                    <View style={[styles.touchableTop, !condition? { backgroundColor: 'rgba(0,0,0,' + maskOpacity + ')' }:null]}></View>
                 </TouchableWithoutFeedback>
                 <Animatable.View easing="ease-out" animation={componentAnimationType} duration={componentDuration} style={componentViewStyle}>
                     {
@@ -142,7 +151,7 @@ class HUD extends Component {
                             w: width,
                             h: height
                         })
-                        
+
                     }
                 </Animatable.View>
             </Animatable.View>
