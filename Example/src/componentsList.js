@@ -7,6 +7,7 @@ import {
     Image
 } from 'react-native'
 import {
+    Util,
     Form,
     showActionSheet,
     showAlert,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#f8f7f4',
         flex: 1,
-        marginTop: 64
+        marginTop: Util.isIOS? 64:54
     },
     iconRight: {
         width: 15,

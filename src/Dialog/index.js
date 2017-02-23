@@ -175,10 +175,9 @@ class Dialog extends Component {
         let { maskAnimationType, maskAnimationDuration, componentAnimationType, componentAnimationDuration } = this.state;
         return (
             <Animatable.View style={styles.maskView} animation={maskAnimationType} easing="linear" duration={maskAnimationDuration}>
-                <Animatable.View animation={componentAnimationType} easing="linear" duration={componentAnimationDuration} onAnimationEnd={() => {
+                <Animatable.View style={styles.container} animation={componentAnimationType} easing="linear" duration={componentAnimationDuration} onAnimationEnd={() => {
                     if (maskAnimationType === 'fadeOut') this.resolve();
                 }}>
-                    <View style={styles.container}>
                         <View style={styles.messageView}>
                             <Text style={styles.title}>{options.title}</Text>
                             <View style={styles.border} />
@@ -201,7 +200,6 @@ class Dialog extends Component {
                                 <Text style={styles.confirm}>{options.confirmTitle || 'confirm'}</Text>
                             </TouchableHighlight>
                         </View>
-                    </View>
                 </Animatable.View>
             </Animatable.View>
         )

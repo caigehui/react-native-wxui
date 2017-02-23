@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         top: Platform.OS === 'ios' ? 64 : 54
     },
     adjustFilter: {
-        top: Platform.OS === 'ios' ? 104 : 84
+        top: Platform.OS === 'ios' ? 104 : 94
     },
     componentAdjustNavigation: {
         marginTop: Platform.OS === 'ios' ? -64 : -54,
@@ -36,14 +36,14 @@ const styles = StyleSheet.create({
     touchable: {
         position: 'absolute',
         left: 0,
-        top: Platform.OS === 'ios' ? 104 : 84,
+        top: Platform.OS === 'ios' ? 104 : 94,
         right: 0,
         bottom: 0,
     },
     touchableTop: {
         position: 'absolute',
         left: 0,
-        bottom: Platform.OS === 'ios' ? 104 : 84,
+        bottom: Platform.OS === 'ios' ? 104 : 94,
         right: 0,
         top: 0,
     },

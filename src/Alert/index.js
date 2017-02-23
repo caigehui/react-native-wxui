@@ -56,8 +56,6 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 16,
         width: Util.WIDTH * 2 / 3 - 60,
-        borderBottomWidth: Util.ONE_PIXEL,
-        borderBottomColor: 'rgb(224,224,224)',
         textAlign: 'center'
     },
     message: {

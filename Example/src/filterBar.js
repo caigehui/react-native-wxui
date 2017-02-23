@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#f8f7f4',
         flex: 1,
-        marginTop: 64
+        marginTop: Util.isIOS? 64:54
     },
     rowContainer: {
         height: 45,
