@@ -35,7 +35,7 @@ export default class extends Component {
                     fullWidth={true}
                     onPress={() => {
                         console.log('SearchBar Pressed')
-                    }}/>
+                    }} />
             </View>
         )
     }

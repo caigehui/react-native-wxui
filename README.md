@@ -8,20 +8,21 @@ A UI package for React Native , both available on iOS and Android
 * [Form](#Form)
 * [ListView](#ListView)
 * [Button](#Button)
-* [SearchBar](#SearchBar)
-* [PopMenuBox](#PopMenuBox)
-* [LoadingPlaceholder](#LoadingPlaceholder)
-* [ActionSheet](#ActionSheet)
-* [Alert](#Alert)
-* [Dialog](#Dialog)
 * [Loading](#Loading)
 * [Success](#Success)
 * [Fail](#Fail)
+* [ActionSheet](#ActionSheet)
+* [Alert](#Alert)
+* [Dialog](#Dialog)
+* [SearchBar](#SearchBar)
+* [PopMenuBox](#PopMenuBox)
+* [LoadingPlaceholder](#LoadingPlaceholder)
 * [TimePickerBox](#TimePickerBox)
 * [FilterBar](#FilterBar)
 
 <a id="Form"></a>
 ## Form
+
 <img src="./docs/Form.png" width="30%"/>
 
 ```javascript
@@ -58,6 +59,7 @@ class extends Component {
 
 <a id="ListView"></a>
 ## ListView
+
 <img src="./docs/ListView.png" width="30%"/>
 
 ```javascript
@@ -105,6 +107,7 @@ class extends Component {
 
 <a id="Button"></a>
 ## Button
+
 <img src="./docs/Button.png" width="30%"/>
 
 Usage:
@@ -156,3 +159,246 @@ inline：
 | ``activeOpacity`` | ``Number`` | 按钮按下去时候的透明度 |
 | ``activityIndicatorColor`` | ``string`` | 设置“`菊花`”的颜色 |
 | ``background`` | ``TouchableNativeFeedback.propTypes.background`` | **仅限安卓**.  ``TouchableNativeFeedback``的背景属性. |
+
+
+
+
+
+---------
+<a id="Loading"></a>
+## Loading
+
+<img src="./docs/showLoading.png" width="30%"/>
+
+```javascript
+import { ProgressHUD } from 'react-native-wxui';
+class extends Component {
+    //...
+    _showLoading = () => {
+        ProgressHUD.showLoading('Loading');
+        setTimeout(ProgressHUD.hideLoading, 1000);
+    }
+    //...
+}
+```
+
+-------
+
+<a id="Success"></a>
+## Success
+
+<img src="./docs/showSuccess.png" width="30%"/>
+
+```javascript
+import { ProgressHUD } from 'react-native-wxui';
+class extends Component {
+    //...
+    _showSuccess = () => {
+        ProgressHUD.showSuccess('Success');
+    }
+    //...
+}
+```
+
+-------
+
+<a id="Fail"></a>
+## Fail
+
+<img src="./docs/showFail.png" width="30%"/>
+
+```javascript
+import { ProgressHUD } from 'react-native-wxui';
+class extends Component {
+    //...
+    _showFail = () => {
+        ProgressHUD.showFail('Fail');
+    }
+    //...
+}
+```
+
+-------
+
+<a id="ActionSheet"></a>
+## ActionSheet
+
+<img src="./docs/ActionSheet.png" width="30%"/>
+
+```javascript
+import { showActionSheet } from 'react-native-wxui';
+class extends Component {
+    //...
+    _showActionSheet = () => showActionSheet({
+        buttons: ['option1', 'option2', 'Cancel'],
+        highlightedIndex: 0, //set index to -1 for none highligeted
+        message: 'message here'
+    }, (index) => {
+        console.log('index ' + index + ' pressed');
+    })
+    //...
+}
+```
+
+-------
+
+<a id="Alert"></a>
+## Alert
+
+<img src="./docs/Alert.png" width="30%"/>
+
+```javascript
+import { showAlert } from 'react-native-wxui';
+class extends Component {
+    //...
+    _showAlert = () => showAlert({
+        title: 'title here',
+        message: 'message here'
+    }, () => {
+        console.log('confirmed')
+    }, () => {
+        console.log('canceled')
+    })
+    //...
+}
+```
+
+-------
+
+<a id="Dialog"></a>
+## Dialog
+
+<img src="./docs/Dialog.png" width="30%"/>
+
+```javascript
+import { showDialog } from 'react-native-wxui';
+class extends Component {
+    //...
+    _showDialog = () => showDialog({
+        title: 'title here',
+        message: 'message here'
+    }, (text) => {
+        console.log('confirmed: ' + text)
+    }, () => {
+        console.log('canceled')
+    })
+    //...
+}
+```
+
+-------
+
+<a id="SearchBar"></a>
+## SearchBar
+
+<img src="./docs/SearchBar.png" width="30%"/>
+
+```javascript
+import { SearchBar } from 'react-native-wxui';
+        <SearchBar
+            autoFocus={true}
+            placeholder="placeholder"
+            value={this.state.text}
+            onChange={(event) => {
+                if (this.state.text === event.nativeEvent.text) return;
+                this.setState({ text: event.nativeEvent.text });
+            }} />
+        <SearchBar
+            editable={true}
+            fullWidth={true}
+            onPress={() => {
+                console.log('SearchBar Pressed')
+            }} />
+```
+
+-------
+
+<a id="PopMenuBox"></a>
+## PopMenuBox
+
+<img src="./docs/PopMenuBox.png" width="30%"/>
+
+```javascript
+import { PopMenuBox } from 'react-native-wxui';
+
+
+        showPopMenuBox({
+                    buttons: buttons
+                },
+                    (index) => {
+                        console.log(index);
+                    })
+```
+
+-------
+
+<a id="LoadingPlaceholder"></a>
+## LoadingPlaceholder
+
+<img src="./docs/LoadingPlaceholder.png" width="30%"/>
+
+```javascript
+import { LoadingPlaceholder } from 'react-native-wxui';
+
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <LoadingPlaceholder/>
+            </View>
+        )
+    }
+
+
+```
+
+-------
+
+<a id="TimePickerBox"></a>
+## TimePickerBox
+
+<img src="./docs/TimePickerBox.png" width="30%"/>
+
+```javascript
+import { TimePickerBox } from 'react-native-wxui';
+
+
+        showTimePickerBox('', (date, time) => {
+            console.log(date, time)
+        }, () => {
+            console.log('timePickerBox canceled')
+        })
+
+    
+```
+
+-------
+
+<a id="TimePickerBox"></a>
+## TimePickerBox
+
+<img src="./docs/TimePickerBox.png" width="30%"/>
+
+```javascript
+import { TimePickerBox } from 'react-native-wxui';
+
+const conditions = [
+    { options: ['option1', 'option2', 'option3', 'option4', 'option5'], imageSource: require('./icon.png'), imageSelectedSource: require('./icon.png') },
+    { options: ['option1', 'option2', 'option3', 'option4', 'option5'], imageSource: require('./icon.png'), imageSelectedSource: require('./icon.png') },
+    { options: ['option1', 'option2', 'option3', 'option4', 'option5'], imageSource: require('./icon.png'), imageSelectedSource: require('./icon.png') }
+];
+
+
+  render() {
+        return (
+            <View style={styles.container}>
+                <FilterBar conditions={conditions} onFilterChange={filters => {
+                    this.setState({ filters })
+                }} />
+            </View>
+        )
+    }
+        
+
+    
+```
