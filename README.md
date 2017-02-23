@@ -374,13 +374,13 @@ import { TimePickerBox } from 'react-native-wxui';
 
 -------
 
-<a id="TimePickerBox"></a>
+<a id="FilterBar"></a>
 ## TimePickerBox
 
-<img src="./docs/TimePickerBox.png" width="30%"/>
+<img src="./docs/FilterBar.png" width="30%"/>
 
 ```javascript
-import { TimePickerBox } from 'react-native-wxui';
+import { FilterBar } from 'react-native-wxui';
 
 const conditions = [
     { options: ['option1', 'option2', 'option3', 'option4', 'option5'], imageSource: require('./icon.png'), imageSelectedSource: require('./icon.png') },
