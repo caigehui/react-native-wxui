@@ -69,7 +69,7 @@ class PopMenuBox extends Component {
         maskAnimationType: 'fadeInDown',
         maskAnimationDuration: 100,
         componentAnimationType: 'fadeIn',
-        componentAnimationDuration: 500,
+        componentAnimationDuration: 200,
     }
 
     _hide = () => new Promise((resolve, reject) => {

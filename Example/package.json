@@ -9,9 +9,7 @@
 	"dependencies": {
 		"react": "15.4.2",
 		"react-native": "0.41.2",
-		"react-native-wxui": "file:../",
-		"react-native-animatable": "^1.1.0",
-		"react-native-root-siblings": "^1.1.2"
+		"react-native-wxui": "file:../"
 	},
 	"devDependencies": {
 		"babel-jest": "18.0.0",

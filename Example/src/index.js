@@ -6,6 +6,10 @@ import ComponentList from './componentsList.js'
 import Button from './button';
 import Form from './form';
 import ListView from './listView';
+import FilterBar from './filterBar';
+import LoadingPlaceholder from './loadingPlaceholder';
+import SearchBar from './searchBar';
+import PopMenuBox  from './popMenuBox';
 export default class extends Component {
     render() {
 
@@ -20,6 +24,10 @@ export default class extends Component {
                     <Scene key="button" title="Button" component={Button}/>
                     <Scene key="form" title="Form" component={Form}/>
                     <Scene key="listView" title="ListView" component={ListView}/>
+                    <Scene key="filterBar" title="FilterBar" component={FilterBar}/>
+                    <Scene key="loadingPlaceholder" title="LoadingPlaceholder" component={LoadingPlaceholder}/>
+                    <Scene key="searchBar" title="SearchBar" component={SearchBar}/>
+                    <Scene key="popMenuBox" title="PopMenuBox" component={PopMenuBox}/>
                 </Scene>
             </Router>
         )

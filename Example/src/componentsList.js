@@ -79,10 +79,10 @@ export default class extends Component {
         { label: 'Button', onPress: Actions.button },
         { label: 'Form', onPress: Actions.form },
         { label: 'ListView', onPress: Actions.listView },
-        // { label: 'FilterBar', onPress: Actions.filterBar },
-        // { label: 'LoadingPlaceholder', onPress: Actions.loadingPlaceholder },
-        // { label: 'SearchBar', onPress: Actions.searchBar },
-        // { label: 'PopMenuBox', onPress: Actions.popMenuBox },
+        { label: 'FilterBar', onPress: Actions.filterBar },
+        { label: 'LoadingPlaceholder', onPress: Actions.loadingPlaceholder },
+        { label: 'SearchBar', onPress: Actions.searchBar },
+        { label: 'PopMenuBox', onPress: Actions.popMenuBox },
     ]
 
     _renderForm = () => {

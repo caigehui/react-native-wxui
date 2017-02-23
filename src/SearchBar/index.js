@@ -123,7 +123,7 @@ export default class SearchBar extends Component {
                         {this.props.editable
                             ? <TextInput ref={searchInput => this.searchInput = searchInput}
                                 style={[styles.searchInput]}
-                                selectionColor={COLOR.TINT_COLOR}
+                                selectionColor={'rgb(35,151,246)'}
                                 clearButtonMode="always"
                                 returnKeyType="search"
                                 underlineColorAndroid="transparent"
