@@ -5,7 +5,7 @@
 
 A UI package for React Native , both available on iOS and Android 
 
-#Intallation
+# Intallation
 
 > npm i react-native-wxui --save
 
