@@ -29,18 +29,18 @@ export default class LoadingPlaceholder extends Component {
         });
     }
 
-    show() {
+    show(end) {
         Animated.spring(
             this.state.scale,
             { toValue: 1 },
-        ).start();
+        ).start(end);
     }
 
-    hide() {
+    hide(end) {
         Animated.spring(
             this.state.scale,
             { toValue: 0 },
-        ).start();
+        ).start(end);
     }
 
     render() {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     iconStyle: {
         width: 50,
