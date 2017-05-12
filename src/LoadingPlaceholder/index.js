@@ -14,6 +14,10 @@ export default class LoadingPlaceholder extends Component {
 
     rotationAnim = new Animated.Value(0);
 
+    state = {
+        scale: new Animated.Value(0)
+    }
+
     _initializeRotationAnimation() {
         this.rotationAnim.setValue(0);
         Animated.timing(this.rotationAnim, {
@@ -25,16 +29,31 @@ export default class LoadingPlaceholder extends Component {
         });
     }
 
+    show() {
+        Animated.spring(
+            this.state.scale,
+            { toValue: 1 },
+        ).start();
+    }
+
+    hide() {
+        Animated.spring(
+            this.state.scale,
+            { toValue: 0 },
+        ).start();
+    }
 
     render() {
         return (
             <View style={[styles.container, this.props.style]}>
-                <Animated.Image source={require('./loading.png') } style={[styles.loadingStyle, {
+                <Animated.Image source={require('./loading.png')} style={[styles.loadingStyle, {
                     transform: [{
                         rotate: this.rotationAnim.interpolate({
                             inputRange: [0, 1],
                             outputRange: ['0deg', '360deg']
                         })
+                    }, {
+                        scale: this.state.scale
                     }]
                 }]} />
             </View>
@@ -63,6 +82,5 @@ const styles = StyleSheet.create({
         bottom: 10,
         width: 40,
         height: 40,
-
     }
 });
