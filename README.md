@@ -1,6 +1,6 @@
 # react-native-wxui 
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://www.npmjs.com/package/react-native-wxui)
-[![Travis](https://img.shields.io/badge/npm-v0.1.3-blue.svg)](https://www.npmjs.com/package/react-native-wxui)
+[![Travis](https://img.shields.io/npm/v/react-wxeap.svg?style=flat)](https://www.npmjs.com/package/react-native-wxui)
 
 
 A UI package for React Native , both available on iOS and Android 
