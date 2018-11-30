@@ -5,6 +5,8 @@
 
 A UI package for React Native , both available on iOS and Android 
 
+WARNING: this repo is deprecated.
+
 # Intallation
 
 > npm i react-native-wxui --save
